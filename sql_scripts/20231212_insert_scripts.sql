@@ -1,0 +1,1 @@
+INSERT INTO `users`(`username`, `password`, `is_active`) VALUES ('user1','cGFzc3dvcmQxMjM0NTY=',1)
