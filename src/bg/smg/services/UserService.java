@@ -55,9 +55,15 @@ public class UserService implements UserServiceI {
         return null;
     }
 
+    public String encode(String password){
+        String encodedPassword = Base64.getEncoder().encodeToString(password.getBytes());
+        return encodedPassword;
+    }
+
     public boolean verifyUser(User user) throws SQLException {
         User registeredUser = getUserByUsername(user.getUsername());
-        if(registeredUser == null && registeredUser.getPassword().equals(user.getPassword()))
+        String encodedPwd = encode(user.getPassword());
+        if(registeredUser != null && registeredUser.getPassword().equals(encodedPwd))
             return true;
         else
             return false;

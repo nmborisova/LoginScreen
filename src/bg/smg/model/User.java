@@ -50,10 +50,7 @@ public class User {
     public void setPassword(String password) {
         this.password=password;
     }
-    public String encode(String password){
-        String encodedPassword = Base64.getEncoder().encodeToString(username.getBytes());
-        return encodedPassword;
-    }
+
 
     @Override
     public String toString() {
